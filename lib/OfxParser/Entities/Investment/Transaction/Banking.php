@@ -20,12 +20,12 @@ class Banking extends BaseTransaction implements OfxLoadable, Inspectable
     /**
      * @var string
      */
-    public $nodeName = 'INVBANKTRAN';
+    public ?string $nodeName = 'INVBANKTRAN';
 
     /**
      * @var string
      */
-    public $subAccountFund;
+    public ?string $subAccountFund;
 
     /**
      * Get a list of properties defined for this entity.

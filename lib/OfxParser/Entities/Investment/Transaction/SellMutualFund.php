@@ -13,12 +13,11 @@ class SellMutualFund extends SellStock
     /**
      * @var string
      */
-    public $nodeName = 'SELLMF';
+    public ?string $nodeName = 'SELLMF';
 
     /**
      * RELFITID used to relate transactions associated with mutual fund exchanges.
      * @var string
      */
-    public $relatedUniqueId;
+    public ?string $relatedUniqueId;
 }
-

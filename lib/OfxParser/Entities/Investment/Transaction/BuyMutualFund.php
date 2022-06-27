@@ -15,12 +15,11 @@ class BuyMutualFund extends BuyStock
     /**
      * @var string
      */
-    public $nodeName = 'BUYMF';
+    public ?string $nodeName = 'BUYMF';
 
     /**
      * RELFITID used to relate transactions associated with mutual fund exchanges.
      * @var string
      */
-    public $relatedUniqueId;
+    public ?string $relatedUniqueId;
 }
-

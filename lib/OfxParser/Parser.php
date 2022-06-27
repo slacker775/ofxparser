@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace OfxParser;
 
@@ -151,7 +152,7 @@ class Parser
         $ofxHeader = preg_replace('/^\n+/m', '', $ofxHeader);
 
         // Check if it's an XML file (OFXv2)
-        if(preg_match('/^<\?xml/', $ofxHeader) === 1) {
+        if (preg_match('/^<\?xml/', $ofxHeader) === 1) {
             // Only parse OFX headers and not XML headers.
             $ofxHeader = preg_replace('/<\?xml .*?\?>\n?/', '', $ofxHeader);
             $ofxHeader = preg_replace(['/"/', '/\?>/', '/<\?OFX/i'], '', $ofxHeader);

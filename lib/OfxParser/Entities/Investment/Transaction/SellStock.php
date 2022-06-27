@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace OfxParser\Entities\Investment\Transaction;
 
@@ -22,14 +23,14 @@ class SellStock extends SellSecurity
     /**
      * @var string
      */
-    public $nodeName = 'SELLSTOCK';
+    public ?string $nodeName = 'SELLSTOCK';
 
     /**
      * Imports the OFX data for this node.
      * @param SimpleXMLElement $node
      * @return $this
      */
-    public function loadOfx(SimpleXMLElement $node)
+    public function loadOfx(SimpleXMLElement $node): SellStock
     {
         parent::loadOfx($node);
         $this->loadSellType($node);
@@ -37,4 +38,3 @@ class SellStock extends SellSecurity
         return $this;
     }
 }
-

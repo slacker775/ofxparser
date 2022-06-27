@@ -22,14 +22,14 @@ class BuyStock extends BuySecurity
     /**
      * @var string
      */
-    public $nodeName = 'BUYSTOCK';
+    public ?string $nodeName = 'BUYSTOCK';
 
     /**
      * Imports the OFX data for this node.
      * @param SimpleXMLElement $node
      * @return $this
      */
-    public function loadOfx(SimpleXMLElement $node)
+    public function loadOfx(SimpleXMLElement $node): BuyStock
     {
         parent::loadOfx($node);
         $this->loadBuyType($node);
@@ -37,4 +37,3 @@ class BuyStock extends BuySecurity
         return $this;
     }
 }
-

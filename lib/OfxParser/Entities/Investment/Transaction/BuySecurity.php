@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace OfxParser\Entities\Investment\Transaction;
 
@@ -14,7 +15,7 @@ use OfxParser\Entities\Investment\Transaction\Traits\Pricing;
  * 13.9.2.4.3 Investment Buy/Sell Aggregates <INVBUY>/<INVSELL>
  *
  * Properties found in the <INVBUY> aggregate.
- * Used for "other securities" BUY activities and provides the 
+ * Used for "other securities" BUY activities and provides the
  * base properties to extend for more specific activities.
  *
  * Required:
@@ -43,14 +44,14 @@ class BuySecurity extends Investment
     /**
      * @var string
      */
-    public $nodeName = 'BUYOTHER';
+    public ?string $nodeName = 'BUYOTHER';
 
     /**
      * Imports the OFX data for this node.
      * @param SimpleXMLElement $node
      * @return $this
      */
-    public function loadOfx(SimpleXMLElement $node)
+    public function loadOfx(SimpleXMLElement $node): BuySecurity
     {
         // Transaction data is nested within <INVBUY> child node
         $this->loadInvTran($node->INVBUY->INVTRAN)
@@ -60,4 +61,3 @@ class BuySecurity extends Investment
         return $this;
     }
 }
-

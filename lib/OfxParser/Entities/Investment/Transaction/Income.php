@@ -40,7 +40,7 @@ class Income extends Investment
     /**
      * @var string
      */
-    public $nodeName = 'INCOME';
+    public ?string $nodeName = 'INCOME';
 
     /**
      * Imports the OFX data for this node.

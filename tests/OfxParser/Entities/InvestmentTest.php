@@ -65,6 +65,7 @@ class InvestmentTest extends TestCase
     {
         $xml = new SimpleXMLElement('<xml></xml>');
         $entity = new InvestmentNoLoadOfx();
+        $this->expectException(\Exception::class);
         $entity->loadOfx($xml);
     }
 

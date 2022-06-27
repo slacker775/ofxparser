@@ -3,27 +3,27 @@
 namespace OfxParser\Entities\Investment;
 
 use OfxParser\Entities\Investment;
+use OfxParser\Entities\Statement;
 
 class Account extends Investment
 {
     /**
      * @var string
      */
-    public $accountNumber;
+    public ?string $accountNumber;
 
     /**
      * @var string
      */
-    public $brokerId;
+    public ?string $brokerId;
 
     /**
      * @var Statement
      */
-    public $statement;
+    public ?Statement $statement;
 
     /**
      * @var string
      */
-    public $transactionUid;
-
+    public ?string $transactionUid;
 }
